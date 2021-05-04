@@ -266,5 +266,5 @@ func value(g geom.T) (driver.Value, error) {
 	if err := Write(sb, NDR, g); err != nil {
 		return nil, err
 	}
-	return []byte(sb.String()), nil
+	return []byte(fmt.Sprintf("ST_SetSRID(%s, %d)", sb.String(), g.SRID())), nil
 }
