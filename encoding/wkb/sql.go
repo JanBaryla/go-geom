@@ -91,7 +91,7 @@ func (g *Geom) Scan(src interface{}) error {
 }
 
 // Value returns the WKB encoding of g.
-func (g *Geom) Value() (driver.Value, error) {
+func (g Geom) Value() (driver.Value, error) {
 	return value(g.T)
 }
 
@@ -119,7 +119,7 @@ func (p *Point) Scan(src interface{}) error {
 }
 
 // Value returns the WKB encoding of p.
-func (p *Point) Value() (driver.Value, error) {
+func (p Point) Value() (driver.Value, error) {
 	return value(p.Point)
 }
 
@@ -142,7 +142,7 @@ func (ls *LineString) Scan(src interface{}) error {
 }
 
 // Value returns the WKB encoding of ls.
-func (ls *LineString) Value() (driver.Value, error) {
+func (ls LineString) Value() (driver.Value, error) {
 	return value(ls.LineString)
 }
 
@@ -165,7 +165,7 @@ func (p *Polygon) Scan(src interface{}) error {
 }
 
 // Value returns the WKB encoding of p.
-func (p *Polygon) Value() (driver.Value, error) {
+func (p Polygon) Value() (driver.Value, error) {
 	return value(p.Polygon)
 }
 
@@ -188,7 +188,7 @@ func (mp *MultiPoint) Scan(src interface{}) error {
 }
 
 // Value returns the WKB encoding of mp.
-func (mp *MultiPoint) Value() (driver.Value, error) {
+func (mp MultiPoint) Value() (driver.Value, error) {
 	return value(mp.MultiPoint)
 }
 
@@ -211,7 +211,7 @@ func (mls *MultiLineString) Scan(src interface{}) error {
 }
 
 // Value returns the WKB encoding of mls.
-func (mls *MultiLineString) Value() (driver.Value, error) {
+func (mls MultiLineString) Value() (driver.Value, error) {
 	return value(mls.MultiLineString)
 }
 
@@ -234,7 +234,7 @@ func (mp *MultiPolygon) Scan(src interface{}) error {
 }
 
 // Value returns the WKB encoding of mp.
-func (mp *MultiPolygon) Value() (driver.Value, error) {
+func (mp MultiPolygon) Value() (driver.Value, error) {
 	return value(mp.MultiPolygon)
 }
 
@@ -257,7 +257,7 @@ func (gc *GeometryCollection) Scan(src interface{}) error {
 }
 
 // Value returns the WKB encoding of gc.
-func (gc *GeometryCollection) Value() (driver.Value, error) {
+func (gc GeometryCollection) Value() (driver.Value, error) {
 	return value(gc.GeometryCollection)
 }
 
